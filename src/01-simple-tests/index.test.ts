@@ -1,32 +1,83 @@
-// Uncomment the code below and write your tests
-// import { simpleCalculator, Action } from './index';
+import { simpleCalculator, Action } from './index';
 
 describe('simpleCalculator tests', () => {
   test('should add two numbers', () => {
-    // Write your test here
+    const addTestObj = {
+      a: 100,
+      b: 101,
+      action: Action.Add,
+    };
+
+    const expectedResult = 201;
+
+    expect(simpleCalculator(addTestObj)).toEqual(expectedResult);
   });
 
   test('should subtract two numbers', () => {
-    // Write your test here
+    const substructTestObj = {
+      a: 100,
+      b: 99,
+      action: Action.Subtract,
+    };
+
+    const expectedResult = 1;
+
+    expect(simpleCalculator(substructTestObj)).toEqual(expectedResult);
   });
 
   test('should multiply two numbers', () => {
-    // Write your test here
+    const multiplyTestObj = {
+      a: 7,
+      b: 7,
+      action: Action.Multiply,
+    };
+
+    const expectedResult = 49;
+
+    expect(simpleCalculator(multiplyTestObj)).toEqual(expectedResult);
   });
 
   test('should divide two numbers', () => {
-    // Write your test here
+    const divideTestObj = {
+      a: 100,
+      b: 10,
+      action: Action.Divide,
+    };
+
+    const expectedResult = 10;
+
+    expect(simpleCalculator(divideTestObj)).toEqual(expectedResult);
   });
 
   test('should exponentiate two numbers', () => {
-    // Write your test here
+    const exponentTestObj = {
+      a: 3,
+      b: 3,
+      action: Action.Exponentiate,
+    };
+
+    const expectedResult = 27;
+
+    expect(simpleCalculator(exponentTestObj)).toEqual(expectedResult);
   });
 
   test('should return null for invalid action', () => {
-    // Write your test here
+    const invalidTestObj = {
+      a: 222,
+      b: 333,
+      action: 'gibrish',
+    };
+
+    expect(simpleCalculator(invalidTestObj)).toBeNull();
   });
 
   test('should return null for invalid arguments', () => {
-    // Write your test here
+    const addTestObj = {
+      a: '222',
+      b: 333,
+      action: Action.Add,
+    };
+
+    expect(simpleCalculator(addTestObj)).toBeNull();
   });
 });
