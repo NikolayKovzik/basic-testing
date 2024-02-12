@@ -15,6 +15,7 @@ describe('throttledGetDataFromApi', () => {
   afterAll(() => {
     jest.useRealTimers();
   });
+
   test('should create instance with provided base url', async () => {
     const mockReturnObject = {
       get: jest.fn().mockReturnValue({ data: {} }),
